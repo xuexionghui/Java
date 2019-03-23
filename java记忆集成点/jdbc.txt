@@ -1,0 +1,23 @@
+1、导包
+2、注册驱动
+	   Class.forName("com.mysql.jdbc.Driver");
+3、获取连接
+       String url="jdbc:mysql://localhost:3306/day07";
+	   String user="root";
+	   String password="root";
+	   Connection connection=DriverManager.getConnection(url,user,password);
+4、编写sql
+	   String sql="select * from category";
+5、创建预编译的语句执行者
+	   PreparedStatement st=connection.prepareStatement(sql);
+		
+6、执行sql
+	   ResultSet  rs=st.executeQuery();
+	   
+7、处理结果
+	   while(rs.next()){
+		   System.out.println(rs.getString("cid")+"::"+rs.getString("cname"));
+	   }
+8、释放资源
+	   rs.close();
+	   st.close();

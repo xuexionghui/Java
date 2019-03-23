@@ -1,0 +1,12 @@
+
+错误内容：
+,Server stats: [[Server:localhost:8300;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@c68738
+17:21:47.991 logback [PollingServerListUpdater-0] INFO  c.n.config.ChainedDynamicProperty - Flipping property: app-mayikt-member.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+
+
+原因：用xxl-sso做单点登陆的服务不要调用其他用xxl-sso做单点登陆的服务，真不好看出来哪里错了
+        <!-- 
+       造成原因：  因为member服务引入了portal-web服务，而portal-web服务里面有配置类，
+            所以当member服务启动的时候，也会创建一个配置类，如果member服务application.rpoerpties
+      里面没有创建这个配置类所需要的属性，就会报错
