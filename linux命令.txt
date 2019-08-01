@@ -114,5 +114,29 @@ logstash启动命令
 
 linux启动rabbitmq命令：
      rabbitmq-server start 
+
+
+
+docker相关命令
+     搜索镜像  docker  search  java
+     下载镜像 docker  pull java:8
+     列出已下载的镜像  docker  images 
+     删除镜像  docker  rmi   镜像id  
+     启动容器   docker  run -d  -p 81:80  nginx
+                 在本例中，为 docker run添加了两个参数，含义如下：
+                 -d 后台运行
+                 -p 宿主机端口:容器端口     #开放容器端口到宿主机端口
+                 访问 http://Docker宿主机 IP:81/
+      列出运行中的容器  docker  ps  
+      查看容器的信息      docker inspect    容器id
+      Docker卸载应用程序  先删除容器，在删除镜像
+                查询所有的容器   docker ps –a
+                使用容器id删除容器  docker rm 18e672ecd8ed
+                查询镜像    docker images
+                使用镜像id删除镜像       docker rmi d23bdf5b1b1b
+               docker container exec -it f0b1c8ab3633 /bin/bash  进入到容器
+               exit 退出
+
+
 		 
    
