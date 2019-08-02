@@ -129,6 +129,7 @@ docker相关命令
                  访问 http://Docker宿主机 IP:81/
       列出运行中的容器  docker  ps  
       查看容器的信息      docker inspect    容器id
+     启动程序  docker  start  容器ID
       Docker卸载应用程序  先删除容器，在删除镜像
                 查询所有的容器   docker ps –a
                 使用容器id删除容器  docker rm 18e672ecd8ed
@@ -136,6 +137,7 @@ docker相关命令
                 使用镜像id删除镜像       docker rmi d23bdf5b1b1b
                docker container exec -it f0b1c8ab3633 /bin/bash  进入到容器
                exit 退出
+ 
 
 
 		 
