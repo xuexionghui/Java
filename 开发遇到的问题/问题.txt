@@ -1,0 +1,23 @@
+  20190714
+引入lobok插件注解可能会出现的问题：  没写get和set方法
+No converter found for return value of type: class com.mayikt.entity.AppEntity
+解决办法：使用get和set方法或者  编辑软件要引入lobok插件‘’
+
+
+  20190723
+Unable to start web server; nested exception is org.springframework.context.ApplicationContextException:
+ Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+
+  20190725
+java.net.SocketTimeoutException: Read timed out
+解决办法：https://blog.csdn.net/iteye_3022/article/details/81751851
+  加在main函数
+
+2019027
+已经将jar包安装进去，但和本地仓库的位置不同，而项目引用的是本地仓库里面的依赖，这样项目就会报找不到依赖问题
+解决办法：
+将install的jar包从maven的安装位置移到本地仓库的位置
+
+20190821
+运行项目出现java.lang.ClassNotFoundException: org.springframework.web.util.IntrospectorCleanupListener
+解决办法：  https://blog.csdn.net/u013533380/article/details/75948541
