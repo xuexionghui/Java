@@ -88,6 +88,9 @@ netstat -ap 查看所有的服务端口
 
 netstat -ap |grep 8080 查看指定的端口
 
+netstat -apn | grep 4040  查找占用端口
+kill  -9  进程号
+
 lsof -i :8888 查看指定的端口
 
 tail -100f myes.log   动态查询myes.log文件里面的内容
