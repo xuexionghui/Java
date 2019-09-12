@@ -1,0 +1,50 @@
+1、自定义注解：
+@Target(ElementType.METHOD)  //@Target说明了Annotation所修饰的对象范围  method 用在方法上
+@Retention(RetentionPolicy.RUNTIME)//注解不仅被保存到class文件中，jvm加载class文件之后，仍然存在
+@Documented
+public @interface SysLog {
+
+	String value() default "";
+}
+
+
+2、@Aspect  //使类成为切面类    用在类上
+     以下注解用在方法上
+     @Before("execution(* com.qcc.beans.aop.*.*(..))")  前置通知
+                目标方法执行之前执行以下方法体的内容 
+     @AfterReturning(value="execution(* com.qcc.beans.aop.*.*(..))",returning="result") 返回通知
+                目标方法正常执行完毕时执行以下代码
+     @After("execution(* com.qcc.beans.aop.*.*(..))")   后置通知  
+                目标方法执行之后执行以下方法体的内容，不管是否发生异常。
+     @AfterThrowing(value="execution(* com.qcc.beans.aop.*.*(..))",throwing="e")
+                异常通知：目标方法发生异常的时候执行以下代码
+     @Around(value="execution(* com.qcc.beans.aop.*.*(..))")
+                环绕通知：目标方法执行前后分别执行一些代码，发生异常的时候执行另外一些代码
+     @Pointcut("@annotation(io.renren.common.annotation.SysLog)")
+                Pointcut 是指那些方法需要被执行"AOP",是由"Pointcut Expression"来描述的.
+
+3、@Configuration  使类成为一个配置类   用在类上
+    
+4、@RestControllerAdvice  拦截异常并统一处理   用在类上
+
+6、@ExceptionHandler(RRException.class) 拦截异常并统一处理  用在方法上
+
+7、@Inherited
+@Inherited/*
+类继承关系中，子类会继承父类使用的注解中被@Inherited修饰的注解
+接口继承关系中，子接口不会继承父接口中的任何注解，不管父接口中使用的注解有没有被@Inherited修饰
+类实现接口时不会继承任何接口中定义的注解
+*/
+
+8、@Order(Ordered.HIGHEST_PRECEDENCE)//定义Spring IOC容器中Bean的执行顺序的优先级,值越小优先级越高
+
+9、mybatis-plus注解
+     @TableName：数据库表相关
+     @TableId：表主键标识
+     @TableField：表字段标识
+     @TableLogic：表字段逻辑处理注解（逻辑删除）
+     @TableId(type= IdType.ID_WORKER_STR)
+     @TableField(exist = false)：表示该属性不为数据库表字段，但又是必须使用的。
+     @TableField(exist = true)：表示该属性为数据库表字段。
+     @TableField(condition = SqlCondition.LIKE)：表示该属性可以模糊搜索
+
