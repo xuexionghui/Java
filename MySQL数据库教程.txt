@@ -1,0 +1,24 @@
+1、SQL简述
+    SQL ：结构化查询语言
+         DDL：数据定义语言，用来操作数据库、表、列等；
+         DML：数据操作语言，用来操作数据库中表里的数据；
+         DCL(Data Control Language)：数据控制语言，用来操作访问权限和安全级别；
+         DQL(Data Query Language)：数据查询语言，用来查询数据
+         DDL和DML的区别：
+        作用对象和级别不一样。
+        DDL操作的对象是数据库，或者一张表，或者表中的某列；DML操作的是表里的数据。
+
+2、数据库的基本操作
+       create database 数据库名称;             //创建数据库
+       show create database 数据库名;       //查看数据库的创建信息
+       create database 数据库名 character set gbk;   //设定字符集的字符编码
+       drop database 数据库名;                    //删除数据库
+       show databases;                                //查询数据库
+       alter database 数据库名 character set gbk;   //修改数据库
+       use 数据库名;                                         //切换数据库
+       select database();                                 //查看当前使用的数据库
+
+  
+ 
+  
+     

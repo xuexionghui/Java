@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-boot-shiro-hello-world
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: 辉
+Implementation-Vendor-Id: com.junlaninfo
+Build-Jdk: 1.8.0_211
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-boot-shiro-hello-world
+Created-By: Maven Integration for Eclipse
+
