@@ -1,0 +1,60 @@
+1、HTML的常用标签
+     p标签 ：常用于表示段落
+     <p align="">段落文本</p>
+           align属性表示对齐方式，常用取值如下：
+                left：左对齐(默认)
+                right：右对齐
+                center：居中对齐
+     
+     h标签：表示标题
+     <hx align="">标题文本</p>
+            align属性表示对齐方式，常用取值如下：
+               left：左对齐(默认)
+               right：右对齐
+               center：居中对齐
+     
+     hr标签：表示一条水平横线
+     <hr align="" size="" color="" width="" />
+           align属性表示对齐方式，常用取值如下：
+                left：左对齐
+                right：右对齐
+                center：居中对齐(默认)
+                size属性表示以像素为单位表示水平线的粗细，默认值为2
+           color属性表示水平线的颜色，可采用颜色名称、十六进制RGB、rgb(r,g,b)表示
+           width属性表示水平线的宽度，可采用像素值表示其宽度；亦可采用浏览器窗口的百分比表示其宽度；默认值为100%
+
+     br标签：表示换行
+     <br>
+
+     nobr标签：表示不换行
+     <nobr>不换行</nobr>
+
+     center标签：表示居中
+     <center>测试center标签</center>
+ 
+     marquee标签：表示跑马灯效果
+             <marquee behavior="scroll" direction="left">
+		<p>测试marquee标签</p>
+             </marquee>
+
+     button标签：表示button
+              <button type="button" onclick="onButtonClick()">This is a button</button>
+	<script type="text/javascript">
+		function onButtonClick(){
+			alert('You click button');
+		}
+	</script>
+      
+      a标签：表示超链接
+             <a href="http://blog.csdn.net/lfdfhl" title="谷哥的小弟" target="_blank">请点击此处的超链</a>
+      
+      img标签：表示图像
+              <img src="" alt="" title="" width="" height="" vspace="" hspace="" />
+
+               src属性表示图片路径
+               alt属性表示图片不能正常显示时的替换文字
+               title属性表示鼠标悬停在图片上时的显示文字
+               width属性表示图片的宽度
+               height属性表示图片的高度
+               vspace属性表示图片的顶部和底部的留白
+               hspace属性表示图片的左侧和右侧的留白

@@ -120,8 +120,6 @@
                     );
 
 	        外键约束：用于多张表进行约束
-                CONSTRAINT 外键名 FOREIGN KEY (从表外键字段) REFERENCES 主表 (主键字段)
-                ALTER TABLE 从表名 ADD CONSTRAINT 外键名 FOREIGN KEY (从表外键字段) REFERENCES 主表 (主键字段);
 
 
 
