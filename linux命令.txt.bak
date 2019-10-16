@@ -1,0 +1,147 @@
+1、解压文件 tar zxf nginx-18.0.tar.gz
+
+2、一次创造多级文件夹 mkdir /var/temp/nginx/client -p
+
+3、一次性创建多级目录 mkdir /var/temp/nginx -p
+
+4、查看进程（linux） ps aux|grep nginx 或者 ps -ef|grep nginx
+
+5、暴力杀死进程 kill -9 进程号
+
+6、温柔杀死进程 kill 进程号
+
+7、Cnetos关闭防火墙 chkconfig iptables off/on
+
+8、改变文件夹、文件的权限 chmod 777 xxx
+
+9、删除 rm - rf xxx 或者 rm -rf /*
+
+10、查看tomcat的启动日志(进入tomcat的安装目录 cd tomcat1) tail -f logs/catalina.out
+
+11、启动tomcat （进入tomcat的安装目录）bin/startup.sh
+
+12、关闭tomcat（进入tomcat的目录） bin/shutdown.sh
+
+13、复制文件 cp xxx /usr/local/重命名
+
+14、复制文件夹 cp xxx /usr/local/重命名 -r
+
+15、centos切换root用户 su - root
+
+16、返回上一级目录 cd ../
+
+17、返回根目录 cd ~
+
+18、在linux中，从一个根目录进入另外一个根目录需要加“/”;不改变根目录的话，不需要加“/”;
+
+20、Ubuntu关闭防火墙 ufw disable 
+
+21、Ubuntu开启防火墙 ufw enable
+
+22、Ubuntu卸载防火墙 apt -get remove iptables
+
+23、Ubuntu切换root用户 sudo su sudo -i
+
+24、maven工程命令行打包命令(Windows系统，进入了maven的工程目录） mvn clean&mvn install -DskipTests
+
+25、windows命令窗查看进程 netstat -ano, 在命令窗查找到pid，然后打开任务管理器，关闭进程
+
+26、安装maven，跳过测试 clean install -DskipTests
+
+27、vi环境块复制
+
+打开文件，不要进入编辑状态
+
+shift+v，方向键选择要复制的内容
+
+y 
+
+找到要复制的地方
+
+p(黏贴）
+
+u(撤销）
+
+28、nohup命令启动 java的jar包
+
+nohup java -Xms32m -Xmx64m -Xss256k -jar ums-sys-webui-0.0.1-SNAPSHOT.jar --spring.cloud.config.profile=prod 1>startbiz.log 2>&1 &
+
+nohup java -Xms32m -Xmx64m -Xss256k -jar ums-sys-webui-0.0.1-SNAPSHOT.jar 1>startbiz.log 2>&1 &
+
+命令行指定端口启动：
+java -jar -Dserver.port=8090 jar包的名字
+
+
+29、查看linux里面的文件是否有指定内容
+
+进入指定的目录 grep -r 指定内容
+
+例子： cd /uar/uav/uav 
+
+grep -r cdn.static.runoob.com
+
+30、Ubuntu查看端口占用
+
+netstat -a 查看已经连接的服务端口
+
+netstat -ap 查看所有的服务端口
+
+netstat -ap |grep 8080 查看指定的端口
+
+netstat -apn | grep 4040  查找占用端口
+kill  -9  进程号
+
+lsof -i :8888 查看指定的端口
+
+tail -100f myes.log   动态查询myes.log文件里面的内容
+tail -n  300   myes.log|grep 'node-1'  查询myes.log里面300行内有没有出现node-1的内容
+
+nginx命令
+    1、使用apt install方式下载的nginx启动方式：service nginx start
+    2、查看nginx的安装位置：             ps -ef|grep nginx
+	3、查看nginx的配置文件位置：    nginx   -t
+	
+Elasticsearch命令：
+    以安装包安装的Es启动命令：（切换到非root用户）
+	    cd  /usr/local/elasticsearch-6.6.1/bin/
+		./elasticsearch
+
+kibana 启动命令
+        以apt-get install 安装的kibana启动命令： service kibana  start 
+	
+logstash启动命令
+    以安装包安装的logstash启动命令：
+	     cd /usr/local/logstash-6.6.1/bin/
+		 ./logstash -f ../config/mayikt02.conf  (./logstash -f ../config/指定配置文件)
+注意：Elasticsearch、kibana、logstash安装的时候，版本要相同，不然可能会出错
+
+linux启动rabbitmq命令：
+     rabbitmq-server start 
+
+
+
+docker相关命令
+     搜索镜像  docker  search  java
+     下载镜像 docker  pull java:8
+     列出已下载的镜像  docker  images 
+     删除镜像  docker  rmi   镜像id  
+     启动容器   docker  run -d  -p 81:80  nginx
+                 在本例中，为 docker run添加了两个参数，含义如下：
+                 -d 后台运行
+                 -p 宿主机端口:容器端口     #开放容器端口到宿主机端口
+                 访问 http://Docker宿主机 IP:81/
+      列出运行中的容器  docker  ps  
+      查看容器的信息      docker inspect    容器id
+     启动程序  docker  start  容器ID
+      Docker卸载应用程序  先删除容器，在删除镜像
+                查询所有的容器   docker ps –a
+                使用容器id删除容器  docker rm 18e672ecd8ed
+                查询镜像    docker images
+                使用镜像id删除镜像       docker rmi d23bdf5b1b1b
+               docker container exec -it f0b1c8ab3633 /bin/bash  进入到容器
+               exit 退出容器
+ 
+
+
+		 
+   

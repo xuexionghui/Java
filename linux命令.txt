@@ -1,3 +1,5 @@
+Linux在线查询：https://wangchujiang.com/linux-command/list.html#!kw=网络
+
 1、解压文件 tar zxf nginx-18.0.tar.gz
 
 2、一次创造多级文件夹 mkdir /var/temp/nginx/client -p
@@ -139,7 +141,7 @@ docker相关命令
                 查询镜像    docker images
                 使用镜像id删除镜像       docker rmi d23bdf5b1b1b
                docker container exec -it f0b1c8ab3633 /bin/bash  进入到容器
-               exit 退出
+               exit 退出容器
  
 
 
